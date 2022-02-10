@@ -1,0 +1,96 @@
+@use "../../utils/" as *;
+
+#app-content-bar {
+    width: 77.5%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.264);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media("<tablet") {
+        width: 100%;
+    }
+}
+
+#app-content-no-category-selected {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#app-category-task-container {
+    width: 100%;
+    height: 100%;
+
+    #app-task-top-background {
+        position: relative;
+        height: 20%;
+        background: #9900ff;
+
+        span {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            margin: 10px;
+        }
+    }
+
+    #app-task-content {
+        height: 80%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #app-task-add-op {
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background: rgb(0, 102, 255);
+        }
+
+        #app-task-list {
+            overflow: auto;
+            padding: 10px 0;
+            width: 100%;
+            height: 100%;
+
+            .app-task {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                width: 100%;
+                padding: 7.5px;
+                margin: 10px 0;
+                text-align: center;
+                background: rgb(104, 104, 104);
+            }
+
+            div {
+                button {
+                    cursor: pointer;
+                    background: rgb(0, 102, 255);
+                    color: white;
+                    border: none;
+                    padding: 5px;
+                    border-radius: 5px;
+                    margin: 0 10px;
+                }
+
+                span {
+                    margin: 0 10px;
+                    font-size: 0.75em;
+                }
+            }
+        }
+    }
+}

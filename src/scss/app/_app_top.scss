@@ -1,0 +1,57 @@
+@use "../utils/" as *;
+
+#app-top {
+    width: 100%;
+    height: 10%;
+    background: rgba(0, 0, 0, 0.493);
+    display: flex;
+    align-items: center;
+
+    #app-mobile-sidebar {
+        text-align: center;
+        display: none;
+
+        @include media("<tablet") {
+            width: 25%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    #app-top-info-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-right: 25vw;
+
+        img {
+            margin: 0 20px;
+            width: 50px;
+            border-radius: 50%;
+
+            @include media("<tablet") {
+                display: none;
+            }
+        }
+
+        @include media("<tablet") {
+            margin: 0;
+        }
+    }
+
+    #app-top-info-container-actions {
+        width: 25%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: right;
+        margin-right: 12vw;
+
+        img {
+            cursor: pointer;
+            width: 30px;
+        }
+    }
+}

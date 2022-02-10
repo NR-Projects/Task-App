@@ -1,0 +1,76 @@
+@use "../utils/" as *;
+
+#middle-bar {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    #description {
+        text-align: center;
+        margin: 0 10px;
+    }
+
+    #auth-container {
+        margin: 10px;
+        outline: 1px solid #fff;
+        padding: 10px;
+        max-width: fit-content;
+        max-height: fit-content;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        #auth-title {
+            font-size: 1.5em;
+            margin: 1em;
+        }
+
+        #auth-warning {
+            font-size: 0.75em;
+            color: red;
+            margin: 0.6em;
+        }
+
+        #auth-selection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0.6em;
+
+            .auth-button {
+                padding: 10px 15px;
+                margin: 10px 0;
+                width: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                
+                img {
+                    width: 25px;
+                    margin-right: 10px;
+                }
+            }
+
+            #google-auth {
+                @include cool_btn_style($color-outside: hsl(147, 100%, 50%));
+
+                &:hover {
+                    background-color: hsl(138, 100%, 42%);
+                }
+            }
+
+            #github-auth {
+                @include cool_btn_style($color-outside: hsl(0, 0%, 19%));
+
+                &:hover {
+                    background-color: hsl(0, 0%, 24%);
+                }
+            }
+        }
+    }
+}

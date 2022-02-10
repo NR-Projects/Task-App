@@ -1,0 +1,66 @@
+@use "utils/anim";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#root, #overview {
+    width: 100%;
+    height: 100%;
+}
+
+#root {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+}
+
+#backgrounds-container {
+    position: absolute;
+    object-fit: cover;
+    inset: 0;
+
+    .main-bg {
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(0,0,49,1) 35%, rgba(0,0,49,1) 54%, rgba(209,0,255,1) 56%, rgba(0,0,49,1) 57%, rgba(0,0,49,1) 60%, rgba(115,0,255,1) 61%, rgba(0,0,49,1) 62%, rgba(2,0,36,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000031",endColorstr="#020024",GradientType=1);
+    }
+
+    #overlay-bg {
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
