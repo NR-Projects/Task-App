@@ -79,7 +79,7 @@ function TaskTemplate(props) {
     return(
         <>
             <div className="app-task" onClick={OnView} ref={taskBlock}>
-                {name}
+                <span>{name}</span>
                 <div>
                     <button onClick={OnCompleteButton}>{completeResetButtonName}</button>
                     <span ref={taskTxt}>{remainingTime}</span>

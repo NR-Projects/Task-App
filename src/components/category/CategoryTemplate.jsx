@@ -23,7 +23,9 @@ function CategoryTemplate(props) {
 
     return (
         <div className="app-category">
-            <span onClick={OnView}>{name}</span>
+            <div className="app-category-title">
+                <span onClick={OnView}>{name}</span>
+            </div>
             <div className="app-category-actions">
                 <img src="img/edit.svg" alt="edit_button" onClick={OnEdit} />
                 <img src="img/delete.svg" alt="delete_button" onClick={OnDelete} />
