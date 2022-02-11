@@ -16,11 +16,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Visuals
 
-![Main Page](layouts/visuals/main-page.png)
-![App Page](layouts/visuals/app-page.png)
+![Main Page](visuals/main-page.png)
+![App Page](visuals/app-page.png)
 
 
-## Dependecies
+## Dependencies
 
 - Create-React-App
 - Firebase (Authentication, Firestore)
@@ -108,7 +108,7 @@ All application bugs, problems, etc. can be placed on the issues tab.
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For all changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
