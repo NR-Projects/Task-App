@@ -26,35 +26,38 @@ function TaskCEModal(props) {
             setTaskTargetDeadline('');
             setTaskActualDeadline('');
         }
-    }, [name, description, date_target_deadline, date_actual_deadline, props.modal_info]);
+    }, [name, description, date_target_deadline, date_actual_deadline, props.modal_info, props.modal_type]);
 
     const OnClose = () => {
         ModalEvent('close', 'app-task-ce-container-overlay');
     }
 
     const OnSubmit = async () => {
-        let flag = true;
-        ModalEvent('close', 'app-task-ce-container-overlay');
-        
-        if(props.modal_type === 'Edit') {
-            ModalEvent('close', 'app-task-view-container-overlay');
-        }
-
-        // Process
-        switch(props.modal_type) {
-            case "Create":
-                flag = await CreateTask(new TaskData('', taskName, taskDescription, '', taskTargetDeadline, taskActualDeadline, ''), props.modal_id);
-                break;
-            case "Edit":
-                let new_category_data = new TaskData('', taskName, taskDescription, '', taskTargetDeadline, taskActualDeadline, '');
-                flag =  await UpdateTask(props.modal_info, new_category_data, props.modal_id);
-                break;
-            default:
-                break;
-        }
-
-        if(!flag) {
-            alert("Something went wrong!, Double check your inputs");
+        if(window.confirm('Are you sure you want to submit'))
+        {
+            let flag = true;
+            ModalEvent('close', 'app-task-ce-container-overlay');
+            
+            if(props.modal_type === 'Edit') {
+                ModalEvent('close', 'app-task-view-container-overlay');
+            }
+    
+            // Process
+            switch(props.modal_type) {
+                case "Create":
+                    flag = await CreateTask(new TaskData('', taskName, taskDescription, '', taskTargetDeadline, taskActualDeadline, ''), props.modal_id);
+                    break;
+                case "Edit":
+                    let new_category_data = new TaskData('', taskName, taskDescription, '', taskTargetDeadline, taskActualDeadline, '');
+                    flag =  await UpdateTask(props.modal_info, new_category_data, props.modal_id);
+                    break;
+                default:
+                    break;
+            }
+    
+            if(!flag) {
+                alert("Inputted Task Data is either incomplete or invalid");
+            }
         }
     }
 
@@ -62,7 +65,7 @@ function TaskCEModal(props) {
         <>
             <div id="app-task-ce-container-overlay">
                 <div id="app-task-ce-container">
-                    <p>Create New Task</p>
+                    <p>{props.modal_type} New Task</p>
                     <form>
                         <div>
                             <label>Task Name:</label>

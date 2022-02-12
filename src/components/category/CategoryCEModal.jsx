@@ -28,26 +28,29 @@ function CategoryCEModal(props) {
     }
 
     const OnSubmitCategoryModal = async () => {
-        let flag = true;
+        if(window.confirm('Are you sure you want to submit?'))
+        {
+            let flag = true;
 
-        // Close Modal
-        ModalEvent('close', 'app-category-ce-container-overlay');
-
-        // Process
-        switch(props.modal_type) {
-            case "Create":
-                flag = await CreateCategory(new CategoryData('', categoryName, categoryBGColor, categoryTxtColor));
-                break;
-            case "Edit":
-                let new_category_data = new CategoryData('', categoryName, categoryBGColor, categoryTxtColor);
-                flag = await UpdateCategory(props.modal_info, new_category_data);
-                break;
-            default:
-                break;
-        }
-
-        if(!flag) {
-            alert("Something went wrong!, Double check your inputs");
+            // Close Modal
+            ModalEvent('close', 'app-category-ce-container-overlay');
+    
+            // Process
+            switch(props.modal_type) {
+                case "Create":
+                    flag = await CreateCategory(new CategoryData('', categoryName, categoryBGColor, categoryTxtColor));
+                    break;
+                case "Edit":
+                    let new_category_data = new CategoryData('', categoryName, categoryBGColor, categoryTxtColor);
+                    flag = await UpdateCategory(props.modal_info, new_category_data);
+                    break;
+                default:
+                    break;
+            }
+    
+            if(!flag) {
+                alert("Something went wrong!, Double check your inputs");
+            }
         }
     };
 

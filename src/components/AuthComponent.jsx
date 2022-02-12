@@ -9,7 +9,7 @@ function LogIn() {
 
     const signInToChosenProvider = (auth, provider) => {
         signInWithPopup(auth, provider).then((result) => {
-            // Add New User Data
+            // Add New User Data [TODO]
         }).catch((error) => {
             alert(error.message);
         });
